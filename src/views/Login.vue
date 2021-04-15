@@ -30,11 +30,17 @@
                 required
               ></b-form-input>
             </b-form-group>
-            <b-button variant="primary" @click="login">logar</b-button> |
-            <b-button variant="danger" @click="register">Registrar</b-button> |
-            <b-button variant="info" @click="recover">Recuperar senha</b-button>
+            <b-button pill variant="primary" @click="login">logar</b-button>
+            <hr />
+            <div>
+              <b-button pill variant="danger" @click="register"
+                >Registrar</b-button
+              >
+              <b-button pill variant="info" @click="recover"
+                >Recuperar senha</b-button
+              >
+            </div>
           </b-form>
-        
         </div>
       </b-col>
       <b-col></b-col>

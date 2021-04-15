@@ -16,10 +16,10 @@
         </div>
         <div v-else>
           <b-navbar-brand>
-            <b-button pill variant="info" @click="logout"> Sair </b-button>
+            <router-link to="/admin/users">Admin</router-link>
           </b-navbar-brand>
           <b-navbar-brand>
-            <router-link to="/admin/users">Admin</router-link>
+            <b-button pill variant="danger" @click="logout"> Sair </b-button>
           </b-navbar-brand>
         </div>
       </div>
