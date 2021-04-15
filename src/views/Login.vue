@@ -23,7 +23,7 @@
       </b-form-group>
       <b-button variant="primary" @click="login">logar</b-button> |
       <b-button variant="danger" @click="register">Registrar</b-button> |
-      <b-button variant="info">Recuperar senha</b-button>
+      <b-button variant="info" @click="recover">Recuperar senha</b-button>
     </b-form>
     <b-card class="mt-3" header="Visualização de dados de entrada">
       <pre class="m-0">{{ form }}</pre>
@@ -68,6 +68,9 @@ export default {
     register() {
       this.$router.push({ name: "Register" });
     },
+    recover(){
+      this.$router.push({name:'Recover'})
+    }
   },
 };
 </script>

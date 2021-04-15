@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import Users from '../views/Users.vue'
+import Recover from '../views/Recover.vue'
+import Code from '../views/Code.vue'
 import axios from 'axios'
 
 Vue.use(VueRouter)
@@ -25,7 +27,7 @@ function AdminAuth(to, from, next) {
       next("/login");
 
     })
-    
+
   }else {
     next("/login");
 
@@ -42,6 +44,15 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
+  },{
+    path:'/recover',
+    name:'Recover',
+    component:Recover
+  },
+  {
+    path:'/recover/code',
+    name:'Code',
+    component:Code
   },
   {
     path: '/login',
