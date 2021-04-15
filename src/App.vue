@@ -2,9 +2,20 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/register">Register</router-link>
     </div>
-    <router-view/>
+    
+    <b-container class="bv-example-row">
+      <b-row>
+        <b-col></b-col>
+        <b-col><!--center-->
+        <h1>test2</h1>
+        <router-view />
+        </b-col>
+        <b-col></b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
