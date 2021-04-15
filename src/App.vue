@@ -1,41 +1,37 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
+    <!------NAVBAR---->
+    <b-navbar toggleable type="dark" variant="dark">
+      <b-navbar-brand href="#">
+        <router-link to="/">Home</router-link>
+      </b-navbar-brand>
       <div>
-        <div v-if="show==false">
-          <router-link to="/register">Register</router-link> |
-          <router-link to="/login">Login</router-link>
+        <div v-if="show == false">
+          <b-navbar-brand href="#">
+            <router-link to="/login">Login</router-link>
+          </b-navbar-brand>
+          <b-navbar-brand href="#">
+            <router-link to="/register">Register</router-link>
+          </b-navbar-brand>
         </div>
-
         <div v-else>
-          <b-button pill variant="info" @click="logout">
-           Sair
-          </b-button>
-           |
-          <router-link to="/admin/users">Admin</router-link>
+          <b-navbar-brand>
+            <b-button pill variant="info" @click="logout"> Sair </b-button>
+          </b-navbar-brand>
+          <b-navbar-brand>
+            <router-link to="/admin/users">Admin</router-link>
+          </b-navbar-brand>
         </div>
-        <!-----v-if------>
       </div>
-    </div>
-
-    <b-container class="bv-example-row">
-      <b-row>
-        <b-col></b-col>
-        <b-col
-          ><!--center-->
-          <router-view />
-        </b-col>
-        <b-col></b-col>
-      </b-row>
-    </b-container>
+    </b-navbar>
+    <p></p>
+    <router-view />
   </div>
 </template>
 <script>
 export default {
   created() {
-    this.show = localStorage.token? true : false;
+    this.show = localStorage.token ? true : false;
   },
   data() {
     return {
@@ -44,13 +40,13 @@ export default {
   },
   methods: {
     logout() {
-      console.log("----->",this.show)
-      console.log(localStorage.getItem('token'));
-      localStorage.removeItem('token');
+      console.log("----->", this.show);
+      console.log(localStorage.getItem("token"));
+      localStorage.removeItem("token");
       this.show = true;
       this.$router.go(0);
       this.$router.push({ name: "Login" });
-     // this.$forceUpdate()
+      // this.$forceUpdate()
     },
   },
 };

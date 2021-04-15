@@ -1,5 +1,7 @@
 <template>
-  <div>
+<b-container >
+  <!-- Content here -->
+   <div>
     <b-form inline>
       <label class="sr-only" for="inline-form-input-username"
         >Codigo de verificação</label
@@ -23,9 +25,11 @@
         ></b-form-input>
       </b-input-group>
 
-      <b-button @click="recoverPass" variant="primary">Save</b-button>
+      <b-button @click="recoverPass" variant="primary">Salvar</b-button>
     </b-form>
   </div>
+</b-container>
+ 
 </template>
 
 <script>

@@ -1,34 +1,45 @@
 <template>
-  <div>
-    <b-form>
-      <b-form-group id="input-group-1" label="E-mail:" label-for="input-1">
-        <b-form-input
-          id="input-1"
-          v-model="form.email"
-          type="email"
-          placeholder="Email"
-          required
-        ></b-form-input>
-      </b-form-group>
+  <b-container class="bv-example-row">
+    <b-row>
+      <b-col></b-col>
+      <b-col
+        ><!--center-->
+        <div>
+          <b-form>
+            <b-form-group
+              id="input-group-1"
+              label="E-mail:"
+              label-for="input-1"
+            >
+              <b-form-input
+                id="input-1"
+                v-model="form.email"
+                type="email"
+                placeholder="Email"
+                required
+              ></b-form-input>
+            </b-form-group>
 
-      <b-form-group id="input-group-2" label="Senha:" label-for="input-2">
-        <b-form-input
-          v-model="form.password"
-          type="password"
-          id="text-password"
-          aria-describedby="password-help-block"
-          placeholder="Senha"
-          required
-        ></b-form-input>
-      </b-form-group>
-      <b-button variant="primary" @click="login">logar</b-button> |
-      <b-button variant="danger" @click="register">Registrar</b-button> |
-      <b-button variant="info" @click="recover">Recuperar senha</b-button>
-    </b-form>
-    <b-card class="mt-3" header="Visualização de dados de entrada">
-      <pre class="m-0">{{ form }}</pre>
-    </b-card>
-  </div>
+            <b-form-group id="input-group-2" label="Senha:" label-for="input-2">
+              <b-form-input
+                v-model="form.password"
+                type="password"
+                id="text-password"
+                aria-describedby="password-help-block"
+                placeholder="Senha"
+                required
+              ></b-form-input>
+            </b-form-group>
+            <b-button variant="primary" @click="login">logar</b-button> |
+            <b-button variant="danger" @click="register">Registrar</b-button> |
+            <b-button variant="info" @click="recover">Recuperar senha</b-button>
+          </b-form>
+        
+        </div>
+      </b-col>
+      <b-col></b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -68,9 +79,9 @@ export default {
     register() {
       this.$router.push({ name: "Register" });
     },
-    recover(){
-      this.$router.push({name:'Recover'})
-    }
+    recover() {
+      this.$router.push({ name: "Recover" });
+    },
   },
 };
 </script>
