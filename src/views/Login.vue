@@ -1,0 +1,72 @@
+<template>
+  <div>
+    <b-form>
+      <b-form-group id="input-group-1" label="E-mail:" label-for="input-1">
+        <b-form-input
+          id="input-1"
+          v-model="form.email"
+          type="email"
+          placeholder="Email"
+          required
+        ></b-form-input>
+      </b-form-group>
+
+      <b-form-group id="input-group-2" label="Senha:" label-for="input-2">
+        <b-form-input
+          v-model="form.password"
+          type="password"
+          id="text-password"
+          aria-describedby="password-help-block"
+          placeholder="Senha"
+          required
+        ></b-form-input>
+      </b-form-group>
+      <b-button variant="primary" @click="login">logar</b-button> |
+      <b-button variant="danger" @click="register">Registrar</b-button> |
+       <b-button variant="info">Recuperar senha</b-button>
+    </b-form>
+    <b-card class="mt-3" header="Visualização de dados de entrada">
+      <pre class="m-0">{{ form }}</pre>
+    </b-card>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      url: "http://localhost:8686/login",
+      error: "Email ou senha incorretos",
+      form: {
+        email: "",
+        password: "",
+        token:""
+      },
+      
+    };
+  },
+  methods: {
+    login() {
+      axios
+        .post(this.url, {
+          email: this.form.email,
+          password: this.form.password,
+        })
+        .then((response) => {
+          console.log(response.data.token);
+          this.form.token = response.data.token;
+          localStorage.setItem('token',response.data.token);
+          this.$router.push({name:'Home'});
+        })
+        .catch((error) => {
+            console.log(error)
+          alert(JSON.stringify(this.error));
+        });
+    },
+    register(){
+        this.$router.push({name:'Register'})
+    }
+  },
+};
+</script>

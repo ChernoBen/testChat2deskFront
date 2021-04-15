@@ -54,7 +54,7 @@
 
       <b-button variant="primary" @click="register" >Cadastrar</b-button>
     </b-form>
-    <b-card class="mt-3" header="Form Data Result">
+    <b-card class="mt-3" header="Visualização de dados de entrada">
       <pre class="m-0">{{ form }}</pre>
     </b-card>
   </div>
@@ -88,7 +88,7 @@ export default {
         documento:this.form.documento
       }).then(response=>{
         console.log(response);
-        this.$router.push({name:'Home'})
+        this.$router.push({name:'Login'})
       }).catch(error=>{
         let msgErro = error.response.data.message;
         this.error = msgErro;
