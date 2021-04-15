@@ -65,7 +65,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      url:"http://edb24598843d.ngrok.io/signin",
+      url:"http://localhost:8686/signin",
       form: {
         email: "",
         name: "",

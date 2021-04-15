@@ -23,7 +23,7 @@
       </b-form-group>
       <b-button variant="primary" @click="login">logar</b-button> |
       <b-button variant="danger" @click="register">Registrar</b-button> |
-       <b-button variant="info">Recuperar senha</b-button>
+      <b-button variant="info">Recuperar senha</b-button>
     </b-form>
     <b-card class="mt-3" header="Visualização de dados de entrada">
       <pre class="m-0">{{ form }}</pre>
@@ -41,9 +41,8 @@ export default {
       form: {
         email: "",
         password: "",
-        token:""
+        token: "",
       },
-      
     };
   },
   methods: {
@@ -56,17 +55,19 @@ export default {
         .then((response) => {
           console.log(response.data.token);
           this.form.token = response.data.token;
-          localStorage.setItem('token',response.data.token);
-          this.$router.push({name:'Home'});
+          localStorage.setItem("token", response.data.token);
+          this.$forceUpdate();
+          this.$router.push({ name: "Home" });
+          this.$router.go(0);
         })
         .catch((error) => {
-            console.log(error)
+          console.log(error);
           alert(JSON.stringify(this.error));
         });
     },
-    register(){
-        this.$router.push({name:'Register'})
-    }
+    register() {
+      this.$router.push({ name: "Register" });
+    },
   },
 };
 </script>
