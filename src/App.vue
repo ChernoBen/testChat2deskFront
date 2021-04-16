@@ -11,13 +11,10 @@
             <router-link to="/login">Login</router-link>
           </b-navbar-brand>
           <b-navbar-brand href="#">
-            <router-link to="/register">Register</router-link>
+            <router-link to="/register">Cadastrar</router-link>
           </b-navbar-brand>
         </div>
         <div v-else>
-          <b-navbar-brand>
-            <router-link to="/admin/users">Admin</router-link>
-          </b-navbar-brand>
           <b-navbar-brand>
             <b-button pill variant="danger" @click="logout"> Sair </b-button>
           </b-navbar-brand>

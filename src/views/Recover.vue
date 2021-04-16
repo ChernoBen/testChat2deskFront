@@ -58,7 +58,7 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-          alert(JSON.stringify(error));
+          alert(JSON.stringify("Insira um email válido"));
         });
     },
   },

@@ -10,7 +10,7 @@
         <b-form-input
           type="text"
           id="inline-form-input-username"
-          placeholder="Nova senha"
+          placeholder="Codigo de verificação"
           v-model="token"
         ></b-form-input>
       </b-input-group>
