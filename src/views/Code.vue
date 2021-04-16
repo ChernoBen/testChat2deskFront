@@ -38,7 +38,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      url: "http://localhost:8686/changePass",
+      url: "http://localhost:3000/changePass",
       form: {
         token: "",
         password: "",

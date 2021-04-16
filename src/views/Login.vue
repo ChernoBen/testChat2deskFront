@@ -53,7 +53,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      url: "http://localhost:8686/login",
+      url: "http://localhost:3000/login",
       error: "Email ou senha incorretos",
       form: {
         email: "",

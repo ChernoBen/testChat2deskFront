@@ -21,7 +21,7 @@ export default {
   created() {
     this.$forceUpdate()
     axios
-      .get("http://localhost:8686/users", this.request)
+      .get("http://localhost:3000/users", this.request)
       .then((response) => {
         console.log(response.data.response);
         this.items = response.data.response;

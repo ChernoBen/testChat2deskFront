@@ -18,7 +18,7 @@ function AdminAuth(to, from, next) {
       }
     }
 
-    axios.post("http://localhost:8686/validate", {}, request).then(response => {
+    axios.post("http://localhost:3000/validate", {}, request).then(response => {
       console.log(response)
       next();
 
